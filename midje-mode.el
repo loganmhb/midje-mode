@@ -1,14 +1,4 @@
 ;;; midje-mode.el --- Minor mode for Midje tests
-;;
-;; Version: 0.1
-;;
-;; This is a minor mode designed to be used with clojure-mode.el and slime.el
-;;
-;; Usage:
-;; (require 'midje-mode)
-;; (require 'clojure-jump-to-file)
-
-;;; Code:
 
 (require 'clojure-mode)
 (require 'slime)
@@ -323,4 +313,3 @@ nearby Clojure form and recheck the last fact checked
      (provided 0)))
 
 (provide 'midje-mode)
-;;; midje-mode.el ends here
