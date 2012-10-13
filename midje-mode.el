@@ -18,7 +18,7 @@
 
 (defun midje-goto-below-code-under-test ()
   (end-of-defun)
-  (next-line))
+  (forward-line))
 
 ;; Util
 
