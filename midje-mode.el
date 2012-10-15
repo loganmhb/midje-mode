@@ -9,6 +9,7 @@
 
 (defvar midje-comments ";.;.")
 (defvar last-checked-midje-fact nil)
+(defvar last-checked-midje-fact-ns nil)
 (defvar midje-fact-regexp "^(facts?\\([[:space:]]\\|$\\)")
 (defvar midje-syntax-table nil)
 
@@ -198,6 +199,7 @@ Check that fact and also save it for use of
 `midje-recheck-last-fact-checked'."
   (interactive)
   (midje-clear-comments)
+  (setq last-checked-midje-fact-ns nrepl-buffer-ns)
   (let ((string (save-excursion
                   (mark-defun)
                   (buffer-substring-no-properties (mark) (point)))))
@@ -217,7 +219,7 @@ the last fact checked (by `midje-check-fact-near-point')."
   (midje-goto-below-code-under-test)
   (nrepl-send-string last-checked-midje-fact
                      (nrepl-check-fact-handler (current-buffer))
-                     nrepl-buffer-ns))
+                     last-checked-midje-fact-ns))
 
 (defun midje-check-fact ()
   "If on or near a Midje fact, check it with
