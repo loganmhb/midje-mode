@@ -10,7 +10,7 @@
 (defvar midje-comments ";.;.")
 (defvar last-checked-midje-fact nil)
 (defvar last-checked-midje-fact-ns nil)
-(defvar midje-fact-regexp "^(facts?\\([[:space:]]\\|$\\)")
+(defvar midje-fact-regexp "(fact\\([[:space:]]\\|$\\)")
 (defvar midje-syntax-table nil)
 
 (defun midje-goto-above-fact ()
