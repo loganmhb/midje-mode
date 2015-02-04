@@ -253,25 +253,11 @@ nearby Clojure form and recheck the last fact checked
       (midje-add-defn-after-unfinished (midje-remove-identifier-from-unfinished-list))
     (midje-add-identifier-to-unfinished-list (midje-identifier))))
 
-(defvar midje-mode-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "C-c ,") 'midje-check-fact)
-    (define-key map (kbd "C-c .") 'midje-check-fact)
-    (define-key map (kbd "C-c C-,") 'midje-check-fact-near-point)
-    (define-key map (kbd "C-c C-.") 'midje-recheck-last-fact-checked)
-    (define-key map (kbd "C-c k")   'midje-clear-comments)
 
-    (define-key map (kbd "C-c f") 'midje-focus-on-this-fact)
-    (define-key map (kbd "C-c h") 'midje-hide-all-facts)
-    (define-key map (kbd "C-c s") 'midje-show-all-facts)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Keymap removed because it sucks ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-    (define-key map (kbd "C-c n") 'midje-next-fact)
-    (define-key map (kbd "C-c p") 'midje-previous-fact)
-
-    (define-key map (kbd "C-c u") 'midje-unfinished)
-
-    map)
-  "Keymap for Midje mode.")
 
 ;;;###autoload
 (define-minor-mode midje-mode
